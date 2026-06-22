@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mostafa Gamal Hassan - Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome for icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" data-theme="dark">
+  
+  
+  <!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Design Fast & Code Faster</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu" role="button" data-bs-toggle="dropdown">More</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Blog</a></li>
+              <li><a class="dropdown-item" href="#">Achievements</a></li>
+              <li><a class="dropdown-item" href="#">Other</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-item">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+              <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Hero Section -->
+  <section id="home" class="d-flex align-items-center text-light hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-1 order-2">
+          <h1 class="fw-bold mb-3">
+            Hello, I'm <span class="text-primary typewriter">Mostafa Gamal Hassan</span>
+          </h1>
+          <p class="lead typewriter-subtitle">Passionate Front-End Developer & UI Designer</p>
+          <div class="d-flex gap-3 my-4 hero-buttons">
+            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline-light">Get in Touch</a>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/mostafa-jamal-hassan" target="_blank">
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://www.youtube.com/playlist?list=PLK8OQ6pk6Mn3rlcYsz8tOrpyJz4BTNKhA" target="_blank">
+              <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a href="https://github.com/mostafa7517" target="_blank">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="https://outlook.live.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0" target="_blank">
+              <i class="fas fa-envelope fa-lg"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2 order-1 text-center">
+          <img src="img/me.jpg" alt="Profile Photo" class="rounded-circle mb-3 profile-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-4 fade-in animate-text">About Me<br>Think Design Code</h2>
+      <div class="text-center fade-in animate-text stagger-2">
+        <p><h4>
+          Before I start my tech journey, I saw websites that weren't just functional, they felt alive. They made me stop, explore, and think. That spark lit a fire in me to build digital experiences that actually connect with people.
+          <br>
+          I'm Mostafa, a developer who sees stories in code. I turn messy, complex ideas into clean, smooth solutions, but my real edge is <strong>experiences that sell themselves</strong> — interfaces that guide, engage, and convert effortlessly. I don't just make projects, <b>I craft journeys that leave a mark</b>.
+          <br>
+          Every project is a chance to push boundaries, flex creativity, and tell a story that sticks. I don't follow trends, I make them. I design digital journeys that people don't just use, they feel.
+          <br>
+          What sets me apart is a mindset built on <strong>adaptability</strong>. I focus on solutions that are not only functional but impactful — blending logic with creativity to deliver results that matter.
+        </h4></p>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Resume Section -->
+<section id="resume" class="py-5 bg-light-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fade-in animate-text mb-4">Resume</h2>
+      
+      <!-- View Resume Button -->
+      <button id="resumeToggle" class="btn btn-primary btn-lg resume-toggle-btn me-2">
+        <i class="fas fa-eye me-2"></i>
+        <span>View Resume</span>
+        <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+      </button>
+
+      <!-- Download Resume Button -->
+      <a href="-CV.pdf" download="My_CV.pdf" 
+         class="btn btn-warning btn-lg resume-toggle-btn ms-2">
+        <i class="fas fa-download me-2"></i>
+        Download CV
+      </a>
+    </div>
+
+    <div id="resumeContent" class="resume-content">
+      <div class="row">
+        <!-- Education -->
+        <div class="col-md-6 fade-in-left stagger-1">
+          <h4 class="animate-text">Education</h4>
+          <p class="animate-text stagger-2">
+            <b>B.Sc.</b> in Computer Science 
+          </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="col-md-6 fade-in-right stagger-2">
+          <h4 class="animate-text">Experience</h4>
+          <ul class="animate-text stagger-3">
+            <li><strong>Frontend Intern</strong> — Endex Group (Jun 2024 – Sep 2024)</li>
+            <li><strong>UI Designer Intern</strong> — BeFound (Jun 2023 – Sep 2023)</li>
+            <li><strong>Team Leader</strong> — Vodafone (Jan 2023 – May 2023)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <!-- Projects -->
+        <div class="col-md-6 fade-in-left stagger-3">
+          <h4 class="animate-text">Projects</h4>
+          <ul class="animate-text stagger-4">
+            <li>
+              <strong>Banking Website & Application</strong> (Frontend Developer) — 
+              <span class="text-muted">link</span>
+            </li>
+            <li>
+              <strong>UI Design Projects</strong> — 
+              <span class="text-muted">[Project link placeholder]</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Certificates -->
+        <div class="col-md-6 fade-in-right stagger-4">
+          <h4 class="animate-text">Certificates</h4>
+          <ul class="animate-text stagger-5">
+            <li>HTML, CSS, and JavaScript — Udemy</li>
+            <li>Figma UI/UX Design — Udemy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <!-- Skills -->
+        <div class="col-md-6 fade-in-left stagger-5">
+          <h4 class="animate-text">Skills</h4>
+          <p class="animate-text stagger-6">
+            HTML, CSS, JavaScript, React.js, Bootstrap, Figma, Git, GitHub, C++, C#, SQL, .NET basics
+          </p>
+        </div>
+
+        <!-- Volunteering -->
+        <div class="col-md-6 fade-in-right stagger-6">
+          <h4 class="animate-text">Volunteering</h4>
+          <ul class="animate-text stagger-7">
+            <li>Blood Donation Campaign – Giza (Oct 2023)</li>
+            <li>Ramadan Food Box Campaign – Giza (Mar 2023)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <!-- Languages -->
+        <div class="col-md-12 fade-in">
+          <h4 class="animate-text">Languages</h4>
+          <p class="animate-text stagger-2">Arabic: Native | English: Fluent</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fade-in animate-text">Skills</h2>
+      
+      <!-- Technical Skills -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h3 class="text-center mb-4 fade-in animate-text stagger-1">Technical Skills</h3>
+          <div class="row g-4">
+            <!-- Frontend Development -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-1">
+                <div class="card-body">
+                  <i class="fab fa-html5 fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Frontend Development</h6>
+                  <div class="skill-tags">
+                    <span class="badge bg-primary me-1 mb-1">HTML5</span>
+                    <span class="badge bg-primary me-1 mb-1">CSS3</span>
+                    <span class="badge bg-primary me-1 mb-1">JavaScript</span>
+                    <span class="badge bg-primary me-1 mb-1">React.js</span>
+                    <span class="badge bg-primary me-1 mb-1">Bootstrap</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- UI/UX Design -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-2">
+                <div class="card-body">
+                  <i class="fas fa-paint-brush fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">UI/UX Design</h6>
+                  <div class="skill-tags">
+                    <span class="badge bg-primary me-1 mb-1">Figma</span>
+                    <span class="badge bg-primary me-1 mb-1">Visual Design</span>
+                    <span class="badge bg-primary me-1 mb-1">Framer</span>
+                    <span class="badge bg-primary me-1 mb-1">User Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Backend & Database -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-3">
+                <div class="card-body">
+                  <i class="fas fa-database fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Backend & Database</h6>
+                  <div class="skill-tags">
+                    <span class="badge bg-primary me-1 mb-1">C#</span>
+                    <span class="badge bg-primary me-1 mb-1">.NET</span>
+                    <span class="badge bg-primary me-1 mb-1">SQL</span>
+                    <span class="badge bg-primary me-1 mb-1">C++</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tools & Version Control -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-4">
+                <div class="card-body">
+                  <i class="fab fa-git-alt fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Tools & Version Control</h6>
+                  <div class="skill-tags">
+                    <span class="badge bg-primary me-1 mb-1">Git</span>
+                    <span class="badge bg-primary me-1 mb-1">GitHub</span>
+                    <span class="badge bg-primary me-1 mb-1">VS Code</span>
+                    <span class="badge bg-primary me-1 mb-1">DevTools</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Soft Skills -->
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center mb-4 fade-in animate-text stagger-2">Soft Skills</h3>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-5">
+                <div class="card-body">
+                  <i class="fas fa-users fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Leadership</h6>
+                  <p class="card-text text-muted">Team management and project coordination</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-6">
+                <div class="card-body">
+                  <i class="fas fa-comments fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Communication</h6>
+                  <p class="card-text text-muted">Clear and effective collaboration</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-7">
+                <div class="card-body">
+                  <i class="fas fa-lightbulb fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Problem Solving</h6>
+                  <p class="card-text text-muted">Creative solutions to complex challenges</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+              <div class="card service-card h-100 text-center stagger-8">
+                <div class="card-body">
+                  <i class="fas fa-clock fa-2x mb-3 text-primary"></i>
+                  <h6 class="card-title">Time Management</h6>
+                  <p class="card-text text-muted">Efficient project delivery and organization</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-5 bg-light-section">
+    <div class="container">
+      <h2 class="text-center mb-5 fade-in animate-text">Hands-On Experience</h2>
+      <div class="row g-4">
+
+        <!-- Frontend Intern Experience -->
+        <div class="col-lg-4">
+          <div class="card portfolio-card h-100 stagger-1">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-code fa-2x text-primary me-3"></i>
+                <div>
+                  <h5 class="card-title mb-1">Frontend Intern</h5>
+                  <h6 class="text-muted">Endex Group</h6>
+                </div>
+              </div>
+              <p class="text-muted mb-2"><i class="fas fa-calendar-alt me-2"></i>Jun 2024 – Sep 2024</p>
+              <p class="card-text">Developed responsive web interfaces using modern frontend technologies. Collaborated with design teams to implement perfect UI components and enhanced user experience across multiple projects.</p>
+              <div class="skill-tags">
+                <span class="badge bg-outline-primary me-1 mb-1">React.js</span>
+                <span class="badge bg-outline-primary me-1 mb-1">JavaScript</span>
+                <span class="badge bg-outline-primary me-1 mb-1">CSS3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UI Designer Intern Experience -->
+        <div class="col-lg-4">
+          <div class="card portfolio-card h-100 stagger-2">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-paint-brush fa-2x text-primary me-3"></i>
+                <div>
+                  <h5 class="card-title mb-1">UI Designer Intern</h5>
+                  <h6 class="text-muted">BeFound</h6>
+                </div>
+              </div>
+              <p class="text-muted mb-2"><i class="fas fa-calendar-alt me-2"></i>Jun 2023 – Sep 2023</p>
+              <p class="card-text">Created user-centered design solutions and wireframes. Worked on improving user interfaces for web applications and collaborated with development teams to ensure design feasibility.</p>
+              <div class="skill-tags">
+                <span class="badge bg-outline-primary me-1 mb-1">Figma</span>
+                <span class="badge bg-outline-primary me-1 mb-1">UI Design</span>
+                <span class="badge bg-outline-primary me-1 mb-1">Wireframing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Leader Experience -->
+        <div class="col-lg-4">
+          <div class="card portfolio-card h-100 stagger-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-users fa-2x text-primary me-3"></i>
+                <div>
+                  <h5 class="card-title mb-1">Team Leader</h5>
+                  <h6 class="text-muted">Vodafone</h6>
+                </div>
+              </div>
+              <p class="text-muted mb-2"><i class="fas fa-calendar-alt me-2"></i>Jan 2023 – May 2023</p>
+              <p class="card-text">Leadership & Team Management – led cross-functional teams and kept them motivated.
+                  Coordination & Collaboration – worked across different departments smoothly.
+                  Time Management – balanced timelines and priorities effectively.
+                  Quality Orientation – ensured deliverables met high standards.</p>
+              <div class="skill-tags">
+                <span class="badge bg-outline-primary me-1 mb-1">Leadership</span>
+                <span class="badge bg-outline-primary me-1 mb-1">Project Management</span>
+                <span class="badge bg-outline-primary me-1 mb-1">Team work</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Services Section -->
+  <section id="services" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fade-in animate-text">Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card service-card h-100 text-center stagger-1">
+            <div class="card-body">
+              <i class="fas fa-code fa-2x mb-3 text-primary"></i>
+              <h5 class="card-title">Web Development</h5>
+              <p class="card-text">Front-End</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card h-100 text-center stagger-2">
+            <div class="card-body">
+              <i class="fas fa-paint-brush fa-2x mb-3 text-primary"></i>
+              <h5 class="card-title">UI Design</h5>
+              <p class="card-text">Design with passion</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card h-100 text-center stagger-3">
+            <div class="card-body">
+              <i class="fas fa-mobile-alt fa-2x mb-3 text-primary"></i>
+              <h5 class="card-title">Responsive Apps</h5>
+              <p class="card-text">it d work on Nokia 3310</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-5 bg-light-section">
+    <div class="container">
+      <h2 class="text-center mb-5 fade-in animate-text">WEBSITES</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/WebsiteTemp.png" class="card-img-top" alt="Project" />
+            <div class="card-body">
+              <h5 class="card-title">simple temp</h5>
+              <p class="card-text">simple website that took almost no time</p>
+              <a href="WebsiteTemp/WebsiteTemp.html" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card portfolio-card stagger-2">
+            <img src="img/Protofolio.png" class="card-img-top" alt="Project" />
+            <div class="card-body">
+              <h5 class="card-title">Portfolio</h5>
+              <p class="card-text">this website itself</p>
+              <a href="index.html" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card portfolio-card stagger-3">
+            <img src="img/Perfume.png" class="card-img-top" alt="Project" />
+            <div class="card-body">
+              <h5 class="card-title">Perfume Store</h5>
+              <p class="card-text">Landing Page For a Perfume store</p>
+              <a href="Perfume Landing Page/Perfume.html" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div> 
+          <div class="col-md-4">
+            <div class="card portfolio-card stagger-3">
+              <img src="img/AdminDashboard.png" class="card-img-top" alt="Project" />
+              <div class="card-body">
+               <h5 class="card-title">Admin Dashboard</h5>
+              <p class="card-text">Admin Dashboard that can mange post and users </p>
+              <a href="AdminDashboard/AdminDashboard-Posts-Users.html" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div> 
+         <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/MoviesPlatform.png" class="card-img-top" alt="Project" />
+            <div class="card-body">
+              <h5 class="card-title">Movies Platform</h5>
+              <p class="card-text">Responsive, Smooth Moveis Platform</p>
+              <a href="Movie Platform/Movies.html" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div> 
+                <div class="col-md-4">
+          <div class="card portfolio-card stagger-2">
+            <img src="img/TechCompanyWebsite.png" class="card-img-top" alt="Project" />
+            <div class="card-body">
+              <h5 class="card-title">Tech Company</h5>
+              <p class="card-text">Saudi TechCompany </p>
+              <a href="TechCompanyWebsite/TechCompanyWebsite.html" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/Tobic_pic.png" class="card-img-top" alt="Project" />
+            <div class="card-body">
+              <h5 class="card-title">Simple app linked to your excel sheet</h5>
+              <a href="simple tobic choose site/simple pic site.html" target="_blank" class="btn btn-sm btn-primary">View Project</a>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+
+
+    <!-- UI/UX Section -->
+  <section id="uiux" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fade-in animate-text">UI/UX Designs</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/DarkBank.png" class="card-img-top" alt="UI Projects" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Bank Website</h5>
+              <p class="card-text">Landing Page For Bank Website UI</p>
+              <a href="UI/Bank light Mode Landing Page.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View Light theme
+              </a>
+              <a href="UI/Bank Dark Mode Landing Page.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View Dark theme
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/BookStore3.png" class="card-img-top" alt="UI Projects" />
+            <div class="card-body text-center">
+              <h5 class="card-title">BookStore platform  </h5>
+              <p class="card-text">BookStore platform UI </p>
+              <a href="UI/Book Store Landing Page.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View 
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/Travel .png" class="card-img-top" alt="UI Projects" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Travel Platform </h5>
+              <p class="card-text">Landing Page For Travrl Website </p>
+              <a href="UI/Travel Platform Landing Page.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View light theme
+              </a>
+              <a href="UI/Travel Platform Landing Page Dark.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View Dark theme
+              </a>
+            </div>
+          </div>
+        </div>
+
+                <div class="col-md-4">
+          <div class="card portfolio-card stagger-1">
+            <img src="img/Perfume Dark.png" class="card-img-top" alt="UI Projects" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Perfume Platform  </h5>
+              <p class="card-text">Landing Page For Perfume Store </p>
+              <a href="UI/Perfume Landing Page.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View Light theme
+              </a>
+              <a href="UI/Perfume Landing Page Daek.pdf" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary">
+                View Dark theme
+              </a>
+            </div>
+          </div>
+        </div>
+        
+<div class="text-center mt-5">
+  <a href="https://www.figma.com/design/O9BG7I8iox1VuYgNOMCr6v/protofolio?node-id=0-1&t=dG2rlEj0ox83q4Sg-1" 
+     target="_blank" 
+     class="btn btn-lg px-5 figma-btn">
+    View All Designs on Figma
+  </a>
+</div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-4 fade-in animate-text">Contact Me</h2>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light py-3">
+    <div class="container d-flex justify-content-center gap-4">
+      <a href="https://wa.me/qr/7N5U4WDGU3A3I1" target="_blank" class="footer-icon">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="https://outlook.live.com/mail/0/?deeplink=mail%2F0%2F%3Fnlp%3D0" target="_blank" class="footer-icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/mostafa-jamal-hassan" target="_blank" class="footer-icon">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.youtube.com/playlist?list=PLK8OQ6pk6Mn3rlcYsz8tOrpyJz4BTNKhA" target="_blank" class="footer-icon">
+        <i class="fab fa-youtube"></i>
+        </a>
+      <a href="https://github.com/mostafa7517" target="_blank" class="footer-icon">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

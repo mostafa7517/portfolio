@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Topic Selector</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f3f4f6; margin:0; padding:24px; }
+    .card { max-width:700px; margin:24px auto; background:#fff; padding:18px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    h1 { margin:0 0 12px; font-size:20px; }
+    .topics { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; max-height:420px; overflow:auto; padding:6px; }
+    label.topic {
+      display:flex; gap:10px; align-items:center; padding:8px; border-radius:8px; cursor:pointer;
+      background:#f7fafc; user-select:none;
+    }
+    input[type="checkbox"] { width:18px; height:18px; }
+    .controls { display:flex; gap:10px; margin-top:14px; }
+    button {
+      padding:10px 14px; border:none; border-radius:8px; cursor:pointer; font-weight:600;
+    }
+    .btn-done { background:#0b79ff; color:white; flex:1; }
+    .btn-refresh { background:#6c757d; color:white; width:140px; }
+    /* popup modal */
+    .modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; z-index:999; }
+    .modal { background:#fff; border-radius:10px; padding:18px; width:320px; max-width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.25); text-align:left; }
+    .modal h3 { margin:0 0 8px; }
+    .modal ul { padding-left:18px; margin:8px 0; max-height:240px; overflow:auto; }
+    .modal .actions { display:flex; gap:8px; justify-content:flex-end; margin-top:12px; }
+    .close-btn { background:#0b79ff; color:#fff; border-radius:8px; padding:8px 12px; border:none; cursor:pointer; }
+    .clear-btn { background:#e5e7eb; border-radius:8px; padding:8px 12px; border:none; cursor:pointer; }
+    /* small screens */
+    @media (max-width:520px){ .topics{ grid-template-columns:1fr; } .controls{ flex-direction:column-reverse; } .btn-refresh{ width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Select topics (choose many) — press Done to show choices</h1>
+
+    <div class="topics" id="topicsContainer"></div>
+
+    <div class="controls">
+      <button class="btn-done" id="doneBtn">Done</button>
+      <button class="btn-refresh" id="refreshBtn">Refresh</button>
+    </div>
+  </div>
+
+  <!-- Modal placeholder (inserted by JS) -->
+  <div id="modalArea"></div>
+
+  <script>
+    // Topics in the "Cars - سيارات" form you wanted
+    const topics = [
+      "Cars - سيارات",
+      "Agriculture - الزراعة",
+      "Anime - أنمي",
+      "Architecture & Design - العمارة والتصميم",
+      "Arts & Culture - الفنون والثقافة",
+      "Astronomy & Space Exploration - الفلك والفضاء",
+      "Beauty & Self-care - الجمال والعناية الذاتية",
+      "Best Advice You've Been Given - أفضل نصيحة حصلت عليها",
+      "Books & Reading - الكتب والقراءة",
+      "Business and Entrepreneurship - الأعمال وريادة الأعمال",
+      "Celebrations & Gifts - الاحتفالات والهدايا",
+      "Celebrities - المشاهير",
+      "Childhood Cartoons - كرتون الطفولة",
+      "Communication & Social Media - التواصل والسوشيال ميديا",
+      "Crafts & Creativity - الحرف والإبداع",
+      "Cultural Diversity - التنوع الثقافي",
+      "Dream Jobs - وظائف الأحلام",
+      "Education & Learning - التعليم والتعلم",
+      "Emotions & Feelings - المشاعر والأحاسيس",
+      "Family - العائلة",
+      "Fashion & Style - الموضة والأناقة",
+      "Favorite Cities - المدن المفضلة",
+      "Food & Cuisine - الطعام والمأكولات",
+      "Future Trends & Innovation - الاتجاهات المستقبلية",
+      "Games & Entertainment - الألعاب والترفيه",
+      "Health & Wellness - الصحة والعافية",
+      "Helpful Habits - العادات المفيدة",
+      "Hobbies & Leisure Activities - الهوايات",
+      "Home & Living - المنزل والمعيشة",
+      "Household Chores - الأعمال المنزلية",
+      "Humor & Comedy - الفكاهة",
+      "Kindness & Compassion - اللطف والتعاطف",
+      "Local Traditions - التقاليد المحلية",
+      "Marketing & Advertising - التسويق والإعلانات",
+      "Money & Budgeting - المال والميزانية",
+      "Morning Routines - روتين الصباح",
+      "Music & Audio Entertainment - الموسيقى والترفيه",
+      "Myths & Folk Tales - الأساطير والحكايات الشعبية",
+      "Nature & Environment - الطبيعة والبيئة",
+      "Parenting - التربية",
+      "Personal Growth & Life Goals - النمو الشخصي",
+      "Pets - الحيوانات الأليفة",
+      "Recent Discoveries - الاكتشافات الحديثة",
+      "Relationships - العلاقات",
+      "Role Models - القدوات",
+      "Science & Research - العلم والبحث",
+      "Shopping & Consumer Trends - التسوق واتجاهات المستهلك",
+      "Skills You Wish You Had - المهارات التي تتمناها",
+      "Sleep & Dreams - النوم والأحلام",
+      "Sports & Physical Activities - الرياضة والنشاط البدني",
+      "Technology & Digital Life - التكنولوجيا والحياة الرقمية",
+      "Time Management & Productivity - إدارة الوقت والإنتاجية",
+      "Transportation & Travel - النقل والسفر",
+      "TV Shows & Movies - المسلسلات والأفلام",
+      "Vacations - الإجازات",
+      "Ways to Relax - طرق الاسترخاء",
+      "Weather & Seasons - الطقس والفصول",
+      "Weekend Plans - خطط نهاية الأسبوع",
+      "Work & Career - العمل والمسيرة المهنية"
+    ];
+
+    const container = document.getElementById("topicsContainer");
+    const modalArea = document.getElementById("modalArea");
+
+    // render checkboxes
+    topics.forEach((t, i) => {
+      const id = "t-" + i;
+      const label = document.createElement("label");
+      label.className = "topic";
+      label.htmlFor = id;
+      label.innerHTML = `<input type="checkbox" id="${id}" value="${t}"> <span>${t}</span>`;
+      container.appendChild(label);
+    });
+
+    // helpers
+    function getSelected() {
+      return Array.from(document.querySelectorAll("#topicsContainer input[type=checkbox]"))
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+    }
+
+    function clearSelection() {
+      document.querySelectorAll("#topicsContainer input[type=checkbox]").forEach(cb => cb.checked = false);
+    }
+
+    function closeModal() {
+      modalArea.innerHTML = "";
+    }
+
+    // create and show modal with selected list
+    function showModal(selected) {
+      closeModal();
+      const backdrop = document.createElement("div");
+      backdrop.className = "modal-backdrop";
+      const modal = document.createElement("div");
+      modal.className = "modal";
+      modal.innerHTML = `
+        <h3>Selected Topics</h3>
+        <div style="max-height:230px; overflow:auto;">
+          <ul>
+            ${selected.map(s => `<li>${s}</li>`).join("")}
+          </ul>
+        </div>
+        <div class="actions">
+          <button class="clear-btn" id="modalClear">Clear Selection</button>
+          <button class="close-btn" id="modalClose">Close</button>
+        </div>
+      `;
+      backdrop.appendChild(modal);
+      modalArea.appendChild(backdrop);
+
+      // attach listeners
+      document.getElementById("modalClose").addEventListener("click", closeModal);
+      document.getElementById("modalClear").addEventListener("click", () => {
+        clearSelection();
+        closeModal();
+      });
+
+      // close modal when clicking backdrop outside modal
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) closeModal();
+      });
+    }
+
+    // Done button -> show popup modal
+    document.getElementById("doneBtn").addEventListener("click", () => {
+      const selected = getSelected();
+      if (selected.length === 0) {
+        // small inline notice if nothing picked
+        // create a quick toast-like hint
+        const tmp = document.createElement("div");
+        tmp.style.position = "fixed";
+        tmp.style.bottom = "20px";
+        tmp.style.left = "50%";
+        tmp.style.transform = "translateX(-50%)";
+        tmp.style.background = "#111827";
+        tmp.style.color = "#fff";
+        tmp.style.padding = "8px 12px";
+        tmp.style.borderRadius = "8px";
+        tmp.style.zIndex = 10000;
+        tmp.textContent = "No topics selected.";
+        document.body.appendChild(tmp);
+        setTimeout(()=> tmp.remove(), 1500);
+        return;
+      }
+      showModal(selected);
+    });
+
+    // Refresh button -> clear selections and close popup
+    document.getElementById("refreshBtn").addEventListener("click", () => {
+      clearSelection();
+      closeModal();
+      // small feedback
+      const tmp = document.createElement("div");
+      tmp.style.position = "fixed";
+      tmp.style.bottom = "20px";
+      tmp.style.left = "50%";
+      tmp.style.transform = "translateX(-50%)";
+      tmp.style.background = "#0b79ff";
+      tmp.style.color = "#fff";
+      tmp.style.padding = "8px 12px";
+      tmp.style.borderRadius = "8px";
+      tmp.style.zIndex = 10000;
+      tmp.textContent = "Selections cleared.";
+      document.body.appendChild(tmp);
+      setTimeout(()=> tmp.remove(), 1200);
+    });
+  </script>
+</body>
+</html>

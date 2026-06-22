@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Posts | Frontend Task 2</title>
+
+<!-- CSS libs -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a href="AdminDashboard-Posts-Users.html">Dashboard</a>
+  <a href="users.html">Users</a>
+  <a href="posts.html">Posts</a>
+  <a href="#addPostSection">➕ Add Post</a>
+  <button id="themeToggle">🌙</button>
+</nav>
+
+<div id="loader" class="loader hidden"></div>
+
+<main class="container">
+  <h1 class="animate__animated animate__fadeInDown">Posts</h1>
+
+  <div class="actions">
+    <input type="text" id="searchPost" placeholder="Search posts..." />
+  </div>
+
+  <ul id="postsList" class="posts-container"></ul>
+
+  <!-- Add/Edit Post Section -->
+  <section id="addPostSection" class="post-form-section">
+    <h2 id="addPostTitle">Add New Post</h2>
+    <label>Title:<input type="text" id="postTitle"></label>
+    <label>Body:<textarea id="postBody" rows="4"></textarea></label>
+    <button id="savePost">Save</button>
+  </section>
+</main>
+
+<!-- JS libs -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!-- Custom JS -->
+<script src="assets/js/app.js"></script>
+<script src="assets/js/posts.js"></script>
+</body>
+</html>

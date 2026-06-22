@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tamem – mostafa-jamal-hassan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .ph {
+      @apply bg-neutral-200 rounded-xl border border-neutral-300;
+      background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0 10px, transparent 10px 20px);
+    }
+    .ar-4-3 { aspect-ratio: 4 / 3; }
+    .ar-3-4 { aspect-ratio: 3 / 4; }
+    .ar-1-1 { aspect-ratio: 1 / 1; }
+    .ar-16-9 { aspect-ratio: 16 / 9; }
+  </style>
+</head>
+<body class="antialiased text-neutral-800">
+  <!-- Top Bar / Mini Nav -->
+  <header class="border-b border-neutral-200 bg-white/70 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-2">
+          <img src="https://via.placeholder.com/36x36" alt="Logo" class="w-9 h-9 rounded-lg" />
+          <span class="font-semibold tracking-wide">Tamem</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a class="hover:text-black" href="#about">About</a>
+          <a class="hover:text-black" href="#product">Product</a>
+          <a class="hover:text-black" href="#blog">Blog</a>
+          <a class="hover:text-black" href="#contact">Contact</a>
+          <a class="px-4 py-2 rounded-xl bg-black text-white" href="#login">Login</a>
+        </nav>
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="space-y-6">
+        <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Keep your body <br class="hidden sm:block"/> fresh with a good <br class="hidden sm:block"/> perfume</h1>
+        <p class="text-neutral-600 max-w-xl">Born from a passion for luxury and individuality, Tamem creates perfumes that leave a lasting impression. Each bottle is a carefully crafted blend of premium ingredients—evoking emotions, memories, and elegance.</p>
+        <div class="flex items-center gap-3">
+          <a href="#shop" class="px-5 py-3 rounded-xl bg-black text-white">Let’s Shopping</a>
+          <a href="#about" class="px-5 py-3 rounded-xl border">Learn More</a>
+        </div>
+      </div>
+      <img src="https://via.placeholder.com/400x600" alt="Hero Image" class="w-full rounded-xl" />
+    </div>
+  </section>
+
+  <!-- New Collection -->
+  <section id="product" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <h2 class="text-3xl font-bold">Our New Collection</h2>
+          <p class="text-neutral-600 max-w-2xl mt-2">Our latest collection celebrates elegance, individuality, and timeless allure. Each fragrance is meticulously crafted with rare ingredients, blending modern sophistication with classic luxury.</p>
+        </div>
+        <div class="hidden sm:block text-sm text-neutral-500">All • Featured • Top Selling • Sale • New</div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Product" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Product" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Product" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Product" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-8">Why Choose Us</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl border p-6">
+          <h3 class="font-semibold mb-2">Premium Quality</h3>
+          <p class="text-neutral-600">We use only the finest, carefully sourced ingredients.</p>
+        </div>
+        <div class="rounded-2xl border p-6">
+          <h3 class="font-semibold mb-2">Unique Blends</h3>
+          <p class="text-neutral-600">Exclusive fragrances you won’t find anywhere else.</p>
+        </div>
+        <div class="rounded-2xl border p-6">
+          <h3 class="font-semibold mb-2">Long-Lasting Scents</h3>
+          <p class="text-neutral-600">Designed to stay with you all day.</p>
+        </div>
+        <div class="rounded-2xl border p-6">
+          <h3 class="font-semibold mb-2">Elegant Design</h3>
+          <p class="text-neutral-600">Luxury packaging that matches the beauty of the fragrance.</p>
+        </div>
+        <div class="rounded-2xl border p-6">
+          <h3 class="font-semibold mb-2">Personal Touch</h3>
+          <p class="text-neutral-600">Each perfume is crafted to reflect individuality and style.</p>
+        </div>
+        <div class="rounded-2xl border p-6">
+          <h3 class="font-semibold mb-2">Statement</h3>
+          <p class="text-neutral-600">With us, fragrance is more than a product—it's who you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discount Banner -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl border p-8 lg:p-12 grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold leading-snug">Up to 30% Discount for Popular item if you checkout today</h2>
+          <a href="#shop" class="inline-block mt-6 px-5 py-3 rounded-xl bg-black text-white">Shop Now</a>
+        </div>
+        <img src="https://via.placeholder.com/600x400" alt="Discount Banner" class="w-full rounded-2xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Store -->
+  <section class="py-16 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-bold">Our Store</h2>
+        <div class="text-sm text-neutral-500">All • Featured • Top Selling • Sale • New</div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border p-3">
+          <img src="https://via.placeholder.com/300x400" alt="Store Item" class="w-full rounded-xl mb-3" />
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Name</h3>
+            <span class="text-neutral-500">$xxx</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-8">What Our Customers Say</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="rounded-2xl border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://via.placeholder.com/48" alt="Avatar" class="w-12 h-12 rounded-full" />
+            <div>
+              <figcaption class="font-semibold">Sara M</figcaption>
+              <p class="text-xs text-neutral-500">2 weeks ago</p>
+            </div>
+          </div>
+          <blockquote class="text-neutral-700">The fragrance is absolutely unique—every time I wear it, people ask me what I’m wearing!</blockquote>
+        </figure>
+        <figure class="rounded-2xl border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://via.placeholder.com/48" alt="Avatar" class="w-12 h-12 rounded-full" />
+            <div>
+              <figcaption class="font-semibold">Ahmad H</figcaption>
+              <p class="text-xs text-neutral-500">2 weeks ago</p>
+            </div>
+          </div>
+          <blockquote class="text-neutral-700">Long-lasting, elegant, and truly luxurious. It has become my signature scent.</blockquote>
+        </figure>
+        <figure class="rounded-2xl border p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://via.placeholder.com/48" alt="Avatar" class="w-12 h-12 rounded-full" />
+            <div>
+              <figcaption class="font-semibold">Gamal R</figcaption>
+              <p class="text-xs text-neutral-500">2 weeks ago</p>
+            </div>
+          </div>
+          <blockquote class="text-neutral-700">Not just a perfume, but an experience. The packaging, the scent, everything feels premium.</blockquote>
+        </figure>
+      </div>
+      <div class="flex items-center justify-center gap-2 mt-6 text-sm text-neutral-500">
+        <span class="w-8 h-8 grid place-items-center rounded-full border">1</span>
+        <span class="w-8 h-8 grid place-items-center rounded-full border">2</span>
+        <span class="w-8 h-8 grid place-items-center rounded-full border">3</span>
+      </div>
+    </div>
+  </section>
+
+ <!-- Blog / Articles -->
+<section id="blog" class="py-16 bg-neutral-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-10 items-start">
+<div>
+<h2 class="text-3xl font-bold mb-4">Read our blogs to get more advice and information update</h2>
+<p class="text-neutral-600 mb-8">Lorem ipsum dolor sit amet consectetur. Fermentum commodo ipsum phasellus velit amet libero iaculis ac. Adipiscing sit ornare purus a ac. Mi viverra donec sed etiam praesent tincidunt faucibus.</p>
+<div class="grid sm:grid-cols-2 gap-6">
+<article class="rounded-2xl border p-4">
+<img src="https://via.placeholder.com/400x300" alt="Blog" class="w-full rounded-xl mb-3" />
+<h3 class="font-semibold leading-snug">Three reasons strong perfumes give you a headache</h3>
+</article>
+<article class="rounded-2xl border p-4">
+<img src="https://via.placeholder.com/400x300" alt="Blog" class="w-full rounded-xl mb-3" />
+<h3 class="font-semibold leading-snug">The past stinks: a brief history of smells and social spaces</h3>
+</article>
+<article class="rounded-2xl border p-4">
+<img src="https://via.placeholder.com/400x300" alt="Blog" class="w-full rounded-xl mb-3" />
+<h3 class="font-semibold leading-snug">Perfume could be the riskiest gift you’ll ever buy</h3>
+</article>
+</div>
+</div>
+<aside class="rounded-2xl border p-6">
+<h3 class="text-xl font-semibold mb-4">GET OUR NEWSLETTER</h3>
+<form class="space-y-3">
+<input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-xl border" />
+<button type="submit" class="w-full px-4 py-3 rounded-xl bg-black text-white">Subscribe</button>
+</form>
+<img src="https://via.placeholder.com/400x400" alt="Sidebar Image" class="w-full rounded-xl mt-6" />
+</aside>
+</div>
+</div>
+</section>
+</body>
+</html>

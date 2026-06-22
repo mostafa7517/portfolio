@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Users | Frontend Task 2</title>
+
+<!-- CSS libs -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a href="AdminDashboard-Posts-Users.html">Dashboard</a>
+  <a href="users.html">Users</a>
+  <a href="posts.html">Posts</a>
+  <a href="#userDetailSection">👤 User Details</a>
+  <button id="themeToggle">🌙</button>
+</nav>
+
+<div id="loader" class="loader hidden">Loading...</div>
+
+<main class="container">
+  <h1 class="animate__animated animate__fadeInDown">Users</h1>
+  <table id="usersTable" class="display" style="width:100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- User Detail/Edit Section -->
+  <section id="userDetailSection" class="user-detail-section hidden">
+    <h2 id="detailTitle">User Details</h2>
+    <div id="detailBody"></div>
+    <button id="saveUserEdit" class="hidden">Save</button>
+  </section>
+</main>
+
+<!-- JS libs -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!-- Custom JS -->
+<script src="assets/js/app.js"></script>
+<script src="assets/js/users.js"></script>
+</body>
+</html>

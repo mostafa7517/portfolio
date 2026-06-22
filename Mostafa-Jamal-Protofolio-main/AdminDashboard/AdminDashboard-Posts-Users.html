@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | MostafaJamal</title>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <h1 class="logo">Thieves go to Hell</h1>
+    </div>
+    <div class="nav-right">
+      <a href="AdminDashboard-Posts-Users.html" class="active">Dashboard</a>
+      <a href="users.html">Users</a>
+      <a href="posts.html">Posts</a>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </nav>
+
+  <div id="loader" class="loader hidden"></div>
+
+  <main class="container">
+    <h1 class="animate__animated animate__fadeInDown">Dashboard</h1>
+    <div class="cards">
+      <div class="card animate__animated animate__fadeInUp">
+        <h2 id="usersCount">0</h2>
+        <p>Users</p>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+        <h2 id="postsCount">0</h2>
+        <p>Posts</p>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+        <h2 id="commentsCount">0</h2>
+        <p>Comments</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

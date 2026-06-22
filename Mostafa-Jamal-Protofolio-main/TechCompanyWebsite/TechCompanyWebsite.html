@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الرقمية السعودية - خدمات الويب المتطورة</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --saudi-green: #1b5e20;
+        --saudi-gold: #ffd700;
+        --desert-sand: #f4e7d1;
+        --deep-emerald: #0f4a0f;
+        --pearl-white: #fefefe;
+        --warm-gold: #b8860b;
+        --shadow-green: rgba(27, 94, 32, 0.1);
+      }
+
+      body {
+        font-family: "Tajawal", sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--pearl-white) 0%,
+          var(--desert-sand) 100%
+        );
+        line-height: 1.6;
+        overflow-x: hidden;
+        transition: opacity 0.28s ease;
+      }
+
+      /* Header with Islamic geometric pattern */
+      .header {
+        background: linear-gradient(
+          45deg,
+          var(--saudi-green),
+          var(--deep-emerald)
+        );
+        position: relative;
+        overflow: hidden;
+        padding: 1rem 0;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 25% 25%,
+            var(--saudi-gold) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            var(--saudi-gold) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px;
+        opacity: 0.1;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+        gap: 1rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--saudi-gold);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--saudi-green);
+        font-weight: 900;
+        box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+      }
+
+      .logo-text {
+        color: var(--pearl-white);
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: var(--pearl-white);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-menu a:hover {
+        color: var(--saudi-gold);
+        transform: translateY(-2px);
+      }
+
+      /* language toggle button */
+      .lang-toggle {
+        background: var(--saudi-gold);
+        color: var(--saudi-green);
+        border: none;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        transition: transform 0.18s ease;
+      }
+      .lang-toggle:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section with Palm Tree Silhouettes */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--saudi-green) 0%,
+          var(--deep-emerald) 100%
+        );
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,200 L0,100 Q300,50 600,100 T1200,100 L1200,200 Z" fill="%23FFD700" fill-opacity="0.1"/></svg>')
+          no-repeat center bottom;
+        background-size: cover;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        color: var(--pearl-white);
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content .highlight {
+        color: var(--saudi-gold);
+        background: linear-gradient(45deg, var(--saudi-gold), var(--warm-gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-content p {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(45deg, var(--saudi-gold), var(--warm-gold));
+        color: var(--saudi-green);
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+      }
+
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        padding: 2rem;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--saudi-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 24px;
+        color: var(--saudi-green);
+      }
+
+      .feature-card h3 {
+        color: var(--pearl-white);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-card p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+
+      /* Services Section with Arabian Architecture */
+      .services {
+        padding: 6rem 0;
+        background: var(--pearl-white);
+        position: relative;
+      }
+
+      .services::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--saudi-gold),
+          transparent
+        );
+      }
+
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-size: 3rem;
+        color: var(--saudi-green);
+        font-weight: 900;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--saudi-gold), var(--warm-gold));
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: var(--pearl-white);
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px var(--shadow-green);
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+        position: relative;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--saudi-green),
+          var(--saudi-gold)
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .service-card:hover {
+        transform: translateY(-15px);
+        border-color: var(--saudi-gold);
+        box-shadow: 0 30px 80px rgba(27, 94, 32, 0.15);
+      }
+
+      .service-image {
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          var(--saudi-green),
+          var(--deep-emerald)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(255, 215, 0, 0.05) 20px,
+          rgba(255, 215, 0, 0.05) 40px
+        );
+      }
+
+      .service-icon {
+        font-size: 4rem;
+        color: var(--saudi-gold);
+        z-index: 2;
+        position: relative;
+      }
+
+      .service-content {
+        padding: 2rem;
+      }
+
+      .service-content h3 {
+        font-size: 1.5rem;
+        color: var(--saudi-green);
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .service-content p {
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features {
+        list-style: none;
+      }
+
+      .service-features li {
+        color: #555;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-right: 1.5rem;
+      }
+
+      .service-features li::before {
+        content: "✓";
+        position: absolute;
+        right: 0;
+        color: var(--saudi-gold);
+        font-weight: bold;
+      }
+
+      /* Portfolio Section */
+      .portfolio {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, #f8f9fa, var(--desert-sand));
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .portfolio-item {
+        background: var(--pearl-white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+      }
+
+      .portfolio-image {
+        height: 220px;
+        background: linear-gradient(
+          45deg,
+          var(--saudi-green),
+          var(--deep-emerald)
+        );
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(27, 94, 32, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-info {
+        padding: 1.5rem;
+      }
+
+      .portfolio-info h4 {
+        font-size: 1.3rem;
+        color: var(--saudi-green);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-info p {
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      /* Clients Section */
+      .clients {
+        padding: 6rem 0;
+        background: var(--pearl-white);
+      }
+
+      .clients-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .client-logo {
+        background: var(--pearl-white);
+        border: 2px solid #eee;
+        border-radius: 15px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--saudi-green);
+        font-weight: 700;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .client-logo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 215, 0, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .client-logo:hover::before {
+        left: 100%;
+      }
+
+      .client-logo:hover {
+        border-color: var(--saudi-gold);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(27, 94, 32, 0.1);
+      }
+
+      /* Testimonials */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, var(--pearl-white), #f8f9fa);
+        border-radius: 25px;
+        padding: 2.5rem;
+        position: relative;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        font-size: 5rem;
+        color: var(--saudi-gold);
+        opacity: 0.3;
+        font-family: serif;
+      }
+
+      .testimonial-text {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(
+          45deg,
+          var(--saudi-green),
+          var(--deep-emerald)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--saudi-gold);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .author-info h5 {
+        color: var(--saudi-green);
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .author-info p {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 6rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--saudi-green),
+          var(--deep-emerald)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            var(--saudi-gold) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            var(--saudi-gold) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            var(--saudi-gold) 1px,
+            transparent 1px
+          );
+        background-size: 100px 100px, 80px 80px, 120px 120px;
+        opacity: 0.05;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .contact-content {
+        text-align: center;
+        color: var(--pearl-white);
+      }
+
+      .contact-content h2 {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+      }
+
+      .contact-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .contact-item {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+      }
+
+      .contact-item-icon {
+        width: 70px;
+        height: 70px;
+        background: var(--saudi-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--saudi-green);
+      }
+
+      .contact-item h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-item p {
+        opacity: 0.8;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--deep-emerald);
+        color: var(--pearl-white);
+        padding: 3rem 0 1rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--saudi-gold),
+          transparent
+        );
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .footer-content p {
+        opacity: 0.8;
+        margin-bottom: 2rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+        background: var(--saudi-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--saudi-gold);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--saudi-gold);
+        color: var(--saudi-green);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+        }
+
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slideInLeft 0.8s ease forwards;
+      }
+
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInRight 0.8s ease forwards;
+      }
+
+      @keyframes slideInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Floating Animation */
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <div class="logo-icon" data-i18n="logo_icon">ر</div>
+          <div class="logo-text" data-i18n="logo_text">الرقمية السعودية</div>
+        </div>
+        <nav class="nav-menu">
+          <a href="#home" data-i18n="nav_home">الرئيسية</a>
+          <a href="#services" data-i18n="nav_services">خدماتنا</a>
+          <a href="#portfolio" data-i18n="nav_portfolio">أعمالنا</a>
+          <a href="#clients" data-i18n="nav_clients">عملاؤنا</a>
+          <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+        </nav>
+
+        <!-- LANGUAGE TOGGLE (added) -->
+        <button
+          id="lang-toggle"
+          class="lang-toggle"
+          aria-label="Toggle language"
+        >
+          EN
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content slide-in-right">
+          <h1 data-i18n="hero_title">
+            نبني <span class="highlight">المستقبل الرقمي</span> للمملكة العربية
+            السعودية
+          </h1>
+          <p data-i18n="hero_text">
+            شركة متخصصة في تقديم حلول الويب المتطورة والتصاميم الإبداعية التي
+            تعكس الهوية السعودية الأصيلة وتواكب رؤية المملكة 2030
+          </p>
+          <a href="#contact" class="cta-button" data-i18n="hero_cta"
+            >ابدأ مشروعك الآن</a
+          >
+        </div>
+        <div class="hero-visual slide-in-left">
+          <div class="feature-grid floating">
+            <div class="feature-card">
+              <div class="feature-icon">🌐</div>
+              <h3 data-i18n="feature1_title">مواقع متطورة</h3>
+              <p data-i18n="feature1_text">تصاميم عصرية تعكس الهوية السعودية</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📱</div>
+              <h3 data-i18n="feature2_title">تطبيقات ذكية</h3>
+              <p data-i18n="feature2_text">حلول تقنية مبتكرة للجوال</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3 data-i18n="feature3_title">أمان متقدم</h3>
+              <p data-i18n="feature3_text">حماية شاملة لبياناتك</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3 data-i18n="feature4_title">أداء عالي</h3>
+              <p data-i18n="feature4_text">سرعة وكفاءة استثنائية</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="section-container">
+        <div class="section-header fade-in">
+          <h2 class="section-title" data-i18n="services_title">
+            خدماتنا المتميزة
+          </h2>
+          <p class="section-subtitle" data-i18n="services_subtitle">
+            نقدم مجموعة شاملة من الحلول الرقمية المتطورة التي تلبي احتياجات
+            السوق السعودي وتواكب أحدث التقنيات العالمية
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <div class="service-image">
+              <div class="service-icon">🌐</div>
+            </div>
+            <div class="service-content">
+              <h3 data-i18n="service1_title">تصميم وتطوير المواقع</h3>
+              <p data-i18n="service1_text">
+                نصمم مواقع إلكترونية عصرية تعكس الهوية السعودية الأصيلة مع أحدث
+                التقنيات والمعايير العالمية
+              </p>
+              <ul class="service-features">
+                <li data-i18n="service1_feature1">
+                  تصميم متجاوب مع جميع الأجهزة
+                </li>
+                <li data-i18n="service1_feature2">واجهات مستخدم سهلة وجذابة</li>
+                <li data-i18n="service1_feature3">تحسين محركات البحث SEO</li>
+                <li data-i18n="service1_feature4">دعم اللغة العربية بالكامل</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-image">
+              <div class="service-icon">🛒</div>
+            </div>
+            <div class="service-content">
+              <h3 data-i18n="service2_title">التجارة الإلكترونية</h3>
+              <p data-i18n="service2_text">
+                نطور منصات تجارة إلكترونية متكاملة تدعم نمو أعمالك وتوفر تجربة
+                تسوق استثنائية لعملائك
+              </p>
+              <ul class="service-features">
+                <li data-i18n="service2_feature1">أنظمة دفع آمنة ومتعددة</li>
+                <li data-i18n="service2_feature2">إدارة المخزون والطلبات</li>
+                <li data-i18n="service2_feature3">تكامل مع الخدمات السحابية</li>
+                <li data-i18n="service2_feature4">نشر في المتاجر الرسمية</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-image">
+              <div class="service-icon">🎨</div>
+            </div>
+            <div class="service-content">
+              <h3 data-i18n="service3_title">الهوية البصرية والتصميم</h3>
+              <p data-i18n="service3_text">
+                نصمم هويات بصرية مميزة تجمع بين الأصالة السعودية والعصرية
+                الحديثة لتميز علامتك التجارية
+              </p>
+              <ul class="service-features">
+                <li data-i18n="service3_feature1">تصميم الشعارات والعلامات</li>
+                <li data-i18n="service3_feature2">هوية بصرية شاملة</li>
+                <li data-i18n="service3_feature3">مواد تسويقية إبداعية</li>
+                <li data-i18n="service3_feature4">دليل استخدام الهوية</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-image">
+              <div class="service-icon">📊</div>
+            </div>
+            <div class="service-content">
+              <h3 data-i18n="service4_title">التحليلات والاستشارات</h3>
+              <p data-i18n="service4_text">
+                نقدم استشارات تقنية متخصصة وتحليلات شاملة لتحسين أداء مشاريعك
+                الرقمية وزيادة عائد الاستثمار
+              </p>
+              <ul class="service-features">
+                <li data-i18n="service4_feature1">تحليل الأداء والزيارات</li>
+                <li data-i18n="service4_feature2">
+                  استراتيجيات التسويق الرقمي
+                </li>
+                <li data-i18n="service4_feature3">تحسين تجربة المستخدم</li>
+                <li data-i18n="service4_feature4">تقارير دورية مفصلة</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card fade-in">
+            <div class="service-image">
+              <div class="service-icon">☁️</div>
+            </div>
+            <div class="service-content">
+              <h3 data-i18n="service5_title">الحلول السحابية</h3>
+              <p data-i18n="service5_text">
+                نوفر حلول سحابية متقدمة وآمنة تضمن استمرارية أعمالك وحماية
+                بياناتك مع إمكانية التوسع المرن
+              </p>
+              <ul class="service-features">
+                <li data-i18n="service5_feature1">
+                  استضافة سحابية عالية الأداء
+                </li>
+                <li data-i18n="service5_feature2">نسخ احتياطية تلقائية</li>
+                <li data-i18n="service5_feature3">حماية متقدمة للبيانات</li>
+                <li data-i18n="service5_feature4">دعم فني على مدار الساعة</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="section-container">
+        <div class="section-header fade-in">
+          <h2 class="section-title" data-i18n="portfolio_title">
+            معرض أعمالنا
+          </h2>
+          <p class="section-subtitle" data-i18n="portfolio_subtitle">
+            نفتخر بمشاريعنا المتنوعة التي تعكس خبرتنا في تقديم حلول رقمية مبتكرة
+            لعملائنا من مختلف القطاعات
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div style="color: var(--saudi-gold); font-size: 3rem">🏢</div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4 data-i18n="portfolio1_title">منصة الخدمات الحكومية</h4>
+              <p data-i18n="portfolio1_text">
+                تطوير منصة رقمية شاملة للخدمات الحكومية مع واجهة سهلة الاستخدام
+                ودعم كامل للغة العربية
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div style="color: var(--saudi-gold); font-size: 3rem">🛒</div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4 data-i18n="portfolio2_title">متجر الأزياء السعودية</h4>
+              <p data-i18n="portfolio2_text">
+                متجر إلكتروني متكامل للأزياء التراثية السعودية مع نظام إدارة
+                محتوى متقدم وتجربة تسوق مميزة
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div style="color: var(--saudi-gold); font-size: 3rem">🏥</div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4 data-i18n="portfolio3_title">نظام إدارة المستشفيات</h4>
+              <p data-i18n="portfolio3_text">
+                حل متكامل لإدارة المستشفيات والعيادات مع نظام حجز المواعيد
+                والسجلات الطبية الإلكترونية
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div style="color: var(--saudi-gold); font-size: 3rem">📚</div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4 data-i18n="portfolio4_title">منصة التعليم الإلكتروني</h4>
+              <p data-i18n="portfolio4_text">
+                نظام تعليمي تفاعلي يدعم التعلم عن بُعد مع أدوات متقدمة للمحاضرات
+                والامتحانات الإلكترونية
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div style="color: var(--saudi-gold); font-size: 3rem">🏠</div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4 data-i18n="portfolio5_title">تطبيق العقارات الذكي</h4>
+              <p data-i18n="portfolio5_text">
+                تطبيق جوال متطور لعرض وتسويق العقارات مع خرائط تفاعلية وبحث
+                متقدم ونظام تقييم العقارات
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in">
+            <div class="portfolio-image">
+              <div class="portfolio-overlay">
+                <div style="color: var(--saudi-gold); font-size: 3rem">🍽️</div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4 data-i18n="portfolio6_title">منصة توصيل الطعام</h4>
+              <p data-i18n="portfolio6_text">
+                تطبيق توصيل طعام متكامل مع نظام تتبع الطلبات والدفع الإلكتروني
+                وواجهة إدارة للمطاعم
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients" id="clients">
+      <div class="section-container">
+        <div class="section-header fade-in">
+          <h2 class="section-title" data-i18n="clients_title">
+            عملاؤنا المميزون
+          </h2>
+          <p class="section-subtitle" data-i18n="clients_subtitle">
+            نفتخر بثقة عملائنا من القطاعات المختلفة ونسعى دائماً لتجاوز توقعاتهم
+            وتحقيق أهدافهم الرقمية
+          </p>
+        </div>
+
+        <div class="clients-showcase">
+          <div class="client-logo fade-in">
+            <span data-i18n="client1">أرامكو السعودية</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client2">البنك الأهلي</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client3">شركة STC</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client4">جامعة الملك سعود</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client5">وزارة الصحة</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client6">مؤسسة النقد</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client7">شركة معادن</span>
+          </div>
+          <div class="client-logo fade-in">
+            <span data-i18n="client8">الخطوط السعودية</span>
+          </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="section-header fade-in">
+          <h2 class="section-title" data-i18n="testimonials_title">
+            آراء عملائنا
+          </h2>
+          <p class="section-subtitle" data-i18n="testimonials_subtitle">
+            استمع لما يقوله عملاؤنا عن تجربتهم معنا وجودة الخدمات التي نقدمها
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text" data-i18n="test1_text">
+              "تجربة استثنائية مع فريق الرقمية السعودية. تم تطوير موقعنا
+              الإلكتروني بأعلى معايير الجودة وفي الوقت المحدد. الفريق محترف
+              ويتفهم احتياجات السوق السعودي بشكل ممتاز."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">أ</div>
+              <div class="author-info">
+                <h5 data-i18n="test1_author_name">أحمد العبدالله</h5>
+                <p data-i18n="test1_author_role">
+                  مدير تقنية المعلومات - شركة النهضة
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text" data-i18n="test2_text">
+              "الهوية البصرية التي صمموها لشركتنا تعكس الأصالة السعودية مع
+              اللمسة العصرية. زاد التصميم من узнаваемость علامتنا التجارية بشكل
+              كبير وساهم في زيادة المبيعات."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">س</div>
+              <div class="author-info">
+                <h5 data-i18n="test2_author_name">سارة المحمد</h5>
+                <p data-i18n="test2_author_role">
+                  مديرة التسويق - متاجر الأناقة
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text" data-i18n="test3_text">
+              "تطبيق الجوال الذي طوره الفريق تجاوز توقعاتنا. واجهة سهلة ومميزة،
+              أداء سريع، ودعم فني ممتاز. أصبح التطبيق جزءاً أساسياً من
+              استراتيجيتنا الرقمية."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">م</div>
+              <div class="author-info">
+                <h5 data-i18n="test3_author_name">محمد السلمان</h5>
+                <p data-i18n="test3_author_role">
+                  الرئيس التنفيذي - شركة الخليج للتقنية
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <div class="contact-content fade-in">
+          <h2 data-i18n="contact_title">ابدأ مشروعك معنا اليوم</h2>
+          <p data-i18n="contact_text">
+            نحن هنا لتحويل أفكارك إلى حلول رقمية متميزة. تواصل معنا الآن واحصل
+            على استشارة مجانية
+          </p>
+          <a href="#" class="cta-button" data-i18n="contact_cta"
+            >احصل على عرض سعر مجاني</a
+          >
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item fade-in">
+            <div class="contact-item-icon">📱</div>
+            <h4 data-i18n="contact_phone_title">الهاتف</h4>
+            <p data-i18n="contact_phone_text">
+              +20 109 973 1647<br />+20 155 7413769
+            </p>
+          </div>
+
+          <div class="contact-item fade-in">
+            <div class="contact-item-icon">✉️</div>
+            <h4 data-i18n="contact_email_title">البريد الإلكتروني</h4>
+            <p data-i18n="contact_email_text">mostafajamal7517@gmial.com</p>
+          </div>
+
+          <div class="contact-item fade-in">
+            <div class="contact-item-icon">📍</div>
+            <h4 data-i18n="contact_address_title">العنوان</h4>
+            <p data-i18n="contact_address_text">
+              الرياض - حي الملك فهد<br />برج التقنية
+            </p>
+          </div>
+
+          <div class="contact-item fade-in">
+            <div class="contact-item-icon">🕐</div>
+            <h4 data-i18n="contact_hours_title">ساعات العمل</h4>
+            <p data-i18n="contact_hours_text">
+              الأحد - الخميس<br />8:00 ص - 6:00 م
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="logo" style="justify-content: center; margin-bottom: 2rem">
+          <div class="logo-icon" data-i18n="footer_logo_icon">ر</div>
+          <div class="logo-text" data-i18n="footer_logo_text">
+            الرقمية السعودية
+          </div>
+        </div>
+        <p data-i18n="footer_main_text">
+          نبني المستقبل الرقمي للمملكة العربية السعودية
+        </p>
+
+        <div class="social-links">
+          <a href="#" class="social-link">📘</a>
+          <a href="#" class="social-link">📷</a>
+          <a href="#" class="social-link">🐦</a>
+          <a href="#" class="social-link">💼</a>
+          <a href="#" class="social-link">📺</a>
+        </div>
+
+        <div
+          style="
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+          "
+        >
+          <p data-i18n="footer_copyright">
+            &copy; 2025 MostafaGamal. جميع الحقوق محفوظة.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling animation + original behaviors
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animate elements on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = Math.random() * 0.3 + "s";
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0) translateX(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document
+          .querySelectorAll(".fade-in, .slide-in-left, .slide-in-right")
+          .forEach((el) => {
+            observer.observe(el);
+          });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Add hover effects to service cards
+        document.querySelectorAll(".service-card").forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-15px) scale(1.02)";
+          });
+
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+          });
+        });
+
+        // Add floating animation to hero visual
+        setInterval(() => {
+          document.querySelectorAll(".floating").forEach((el) => {
+            el.style.transform = `translateY(${
+              Math.sin(Date.now() * 0.001) * 10
+            }px)`;
+          });
+        }, 50);
+
+        // Add parallax effect to background elements
+        window.addEventListener("scroll", () => {
+          const scrolled = window.pageYOffset;
+          // Note: pseudo-elements can't be selected directly; ignore if none.
+          // This code is left as-is from the original; it won't break though it selects nothing.
+          const parallaxElements = document.querySelectorAll(
+            ".hero::before, .contact::before"
+          );
+
+          parallaxElements.forEach((element) => {
+            element.style.transform = `translateY(${scrolled * 0.5}px)`;
+          });
+        });
+
+        /***********************
+         * LANGUAGE TOGGLE CODE
+         * (keeps original layout, replaces text only)
+         ***********************/
+        const translations = {
+          en: {
+            // header / logo / nav
+            logo_icon: "D",
+            logo_text: "Digital Saudi",
+            nav_home: "Home",
+            nav_services: "Services",
+            nav_portfolio: "Portfolio",
+            nav_clients: "Clients",
+            nav_contact: "Contact",
+
+            // hero
+            hero_title: `We build <span class="highlight">the digital future</span> of Saudi Arabia`,
+            hero_text:
+              "A company specialized in providing advanced web solutions and creative designs that reflect authentic Saudi identity and align with Vision 2030.",
+            hero_cta: "Start Your Project Now",
+
+            // features
+            feature1_title: "Advanced Websites",
+            feature1_text: "Modern designs that reflect Saudi identity",
+            feature2_title: "Smart Mobile Apps",
+            feature2_text: "Innovative mobile-first solutions",
+            feature3_title: "Advanced Security",
+            feature3_text: "Comprehensive protection for your data",
+            feature4_title: "High Performance",
+            feature4_text: "Exceptional speed and efficiency",
+
+            // services
+            services_title: "Our Premium Services",
+            services_subtitle:
+              "We deliver a comprehensive set of digital solutions that meet the Saudi market needs and follow global tech standards.",
+
+            service1_title: "Website Design & Development",
+            service1_text:
+              "We design modern websites that embody authentic Saudi identity using the latest technologies and global standards.",
+            service1_feature1: "Responsive design for all devices",
+            service1_feature2: "Intuitive and attractive UIs",
+            service1_feature3: "SEO optimization",
+            service1_feature4: "Full Arabic language support",
+
+            service2_title: "E-commerce Solutions",
+            service2_text:
+              "We build complete e-commerce platforms that support business growth and deliver exceptional shopping experiences.",
+            service2_feature1: "Secure and multiple payment gateways",
+            service2_feature2: "Inventory & order management",
+            service2_feature3: "Cloud integrations",
+            service2_feature4: "Publishing to official app stores",
+
+            service3_title: "Brand Identity & Design",
+            service3_text:
+              "We craft distinctive visual identities combining Saudi authenticity with modern aesthetics.",
+            service3_feature1: "Logo & brand mark design",
+            service3_feature2: "Comprehensive brand identity",
+            service3_feature3: "Creative marketing assets",
+            service3_feature4: "Brand usage guidelines",
+
+            service4_title: "Analytics & Consultancy",
+            service4_text:
+              "Expert consultancy and deep analytics to improve digital project performance and ROI.",
+            service4_feature1: "Performance & traffic analysis",
+            service4_feature2: "Digital marketing strategies",
+            service4_feature3: "UX optimization",
+            service4_feature4: "Detailed periodic reports",
+
+            service5_title: "Cloud Solutions",
+            service5_text:
+              "Secure, scalable cloud solutions to ensure continuity and data protection.",
+            service5_feature1: "High-performance cloud hosting",
+            service5_feature2: "Automated backups",
+            service5_feature3: "Advanced data protection",
+            service5_feature4: "24/7 technical support",
+
+            // portfolio
+            portfolio_title: "Our Work",
+            portfolio_subtitle:
+              "Proud projects that demonstrate our expertise delivering innovative digital solutions across sectors.",
+
+            portfolio1_title: "Government Services Platform",
+            portfolio1_text:
+              "A comprehensive government services platform with an easy-to-use interface and full Arabic support.",
+
+            portfolio2_title: "Saudi Fashion E-store",
+            portfolio2_text:
+              "Full-featured e-commerce store for traditional Saudi fashion with advanced CMS and premium UX.",
+
+            portfolio3_title: "Hospital Management System",
+            portfolio3_text:
+              "An integrated solution for hospitals and clinics with appointment booking and EHR modules.",
+
+            portfolio4_title: "E-Learning Platform",
+            portfolio4_text:
+              "An interactive LMS supporting remote learning with advanced lecture and exam tools.",
+
+            portfolio5_title: "Smart Real Estate App",
+            portfolio5_text:
+              "A mobile app for property listings with maps, advanced search and rating systems.",
+
+            portfolio6_title: "Food Delivery Platform",
+            portfolio6_text:
+              "Complete food delivery app with order tracking, payments and restaurant dashboard.",
+
+            // clients
+            clients_title: "Featured Clients",
+            clients_subtitle:
+              "We are honored by the trust of clients across multiple industries.",
+            client1: "Saudi Aramco",
+            client2: "National Commercial Bank",
+            client3: "STC",
+            client4: "King Saud University",
+            client5: "Ministry of Health",
+            client6: "Saudi Central Bank ",
+            client7: "Ma'aden",
+            client8: "Saudia",
+
+            // testimonials
+            testimonials_title: "What Our Clients Say",
+            testimonials_subtitle:
+              "Hear from our clients about their experience and the service quality we deliver.",
+
+            test1_text:
+              '"An outstanding experience with Digital Saudi. Our website was developed to the highest standards and delivered on time. The team is professional and understands the Saudi market very well."',
+            test1_author_name: "Ahmad Alabdullah",
+            test1_author_role: "IT Director - Al Nahda Company",
+
+            test2_text:
+              '"The visual identity they created reflects Saudi authenticity with a modern touch. The redesign significantly increased our brand recognition and boosted sales."',
+            test2_author_name: "Sarah AlMohammed",
+            test2_author_role: "Marketing Director - Elegance Stores",
+
+            test3_text:
+              '"The mobile app the team delivered exceeded our expectations. Great UX, fast performance and excellent support. The app became central to our digital strategy."',
+            test3_author_name: "Mohammed AlSuliman",
+            test3_author_role: "CEO - GulfTech Solutions",
+
+            // contact
+            contact_title: "Start Your Project With Us Today",
+            contact_text:
+              "We are here to turn your ideas into outstanding digital solutions. Contact us now for a free consultation.",
+            contact_cta: "Get a Free Quote",
+
+            contact_phone_title: "Phone",
+            contact_phone_text: "+20 109 973 1647<br>+20 155 7413769",
+
+            contact_email_title: "Email",
+            contact_email_text: "mostafajamal7517@gmail.com",
+
+            contact_address_title: "Address",
+            contact_address_text: "Riyadh - King Fahd District<br>Tech Tower",
+
+            contact_hours_title: "Working Hours",
+            contact_hours_text: "Sun - Thu<br>8:00 AM - 6:00 PM",
+
+            // footer
+            footer_logo_icon: "D",
+            footer_logo_text: "Digital Saudi",
+            footer_main_text: "We build the digital future of Saudi Arabia",
+            footer_copyright: "© MostafaGamal. All rights reserved.",
+          },
+          // Note: Arabic defaults are the original DOM contents; we don't need to duplicate them here.
+        };
+
+        // Collect all i18n elements and store original Arabic content (innerHTML)
+        const i18nElements = document.querySelectorAll("[data-i18n]");
+        i18nElements.forEach((el) => {
+          if (!el.dataset.ar) {
+            el.dataset.ar = el.innerHTML.trim();
+          }
+        });
+
+        // LANGUAGE SWITCHER
+        const langBtn = document.getElementById("lang-toggle");
+        // start with Arabic as default
+        let currentLang =
+          document.documentElement.lang &&
+          document.documentElement.lang.startsWith("en")
+            ? "en"
+            : "ar";
+        // Ensure button shows correct initial label
+        langBtn.textContent = currentLang === "ar" ? "EN" : "ع";
+
+        function setLanguage(lang) {
+          // fade out
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            // update direction and lang attr
+            if (lang === "ar") {
+              document.documentElement.lang = "ar";
+              document.documentElement.dir = "rtl";
+            } else {
+              document.documentElement.lang = "en";
+              document.documentElement.dir = "ltr";
+            }
+
+            // replace texts
+            i18nElements.forEach((el) => {
+              const key = el.getAttribute("data-i18n");
+              if (!key) return;
+              if (lang === "ar") {
+                // restore original Arabic HTML
+                el.innerHTML = el.dataset.ar;
+              } else {
+                // English replacement if available
+                const replacement = translations.en[key];
+                if (typeof replacement !== "undefined") {
+                  el.innerHTML = replacement;
+                } else {
+                  // fallback to Arabic if no translation
+                  el.innerHTML = el.dataset.ar;
+                }
+              }
+            });
+
+            // update lang button label
+            langBtn.textContent = lang === "ar" ? "EN" : "ع";
+
+            // small reflow / fade in
+            setTimeout(() => (document.body.style.opacity = 1), 30);
+          }, 240);
+        }
+
+        // On click toggle languages
+        langBtn.addEventListener("click", () => {
+          currentLang = currentLang === "ar" ? "en" : "ar";
+          setLanguage(currentLang);
+        });
+
+        // Optionally expose to global for debugging
+        window.setLanguage = setLanguage;
+      });
+    </script>
+  </body>
+</html>
