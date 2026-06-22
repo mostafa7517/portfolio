@@ -25,7 +25,7 @@ function checkLogin(){
    LOADING SYSTEM
 ========================= */
 
-
+/*
 const loadingMessages = [
 
     "Initializing 3nbr 17 Database...",
@@ -94,7 +94,7 @@ if (loadingText) {
 
 },1200);
 
-
+*/
 
 
 
@@ -118,7 +118,7 @@ id:"017-004",
 
 rank:"Veteran",
 
-role:"Tactical Survivor",
+role:"Sleeper",
 
 status:"Legendary Survivor",
 
@@ -127,6 +127,8 @@ badges:[
 "Sharmoot Noum",
 
 "Sanay3e"
+
+
 
 ],
 
@@ -170,7 +172,9 @@ badges:[
 
 "Intel Officer",
 
-"Coward"
+"Coward",
+
+"security"
 
 ],
 
@@ -212,7 +216,7 @@ status:"Sharmoot",
 
 badges:[
 
-"Sanay3y",
+"sakaly",
 
 "Tactical Mind"
 
@@ -265,11 +269,11 @@ badges:[
 
 stats:{
 
-Sleep:70,
+Sleep:60,
 
-Negotiation:60,
+Negotiation:70,
 
-Discipline:55
+Discipline:25
 
 },
 
@@ -302,7 +306,9 @@ badges:[
 
 "Dealer",
 
-"Grar"
+"Grar",
+
+"security"
 
 ],
 
