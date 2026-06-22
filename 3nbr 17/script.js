@@ -10,7 +10,7 @@ function checkLogin(){
 
         localStorage.setItem("access", "granted");
 
-        window.location.href = "index.html";
+        window.location.href = "3nbr.html";
 
     } else {
 
@@ -57,8 +57,9 @@ const loadingInterval =
 setInterval(()=>{
 
 
-    loadingText.textContent =
-    loadingMessages[loadingIndex];
+if (loadingText) {
+    loadingText.textContent = loadingMessages[loadingIndex];
+}
 
 
     loadingIndex++;
@@ -439,7 +440,9 @@ document.getElementById(
 function renderMembers(data){
 
 
-membersContainer.innerHTML="";
+if (!membersContainer) return;
+
+membersContainer.innerHTML = "";
 
 
 
