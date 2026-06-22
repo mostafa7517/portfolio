@@ -25,7 +25,7 @@ function checkLogin(){
    LOADING SYSTEM
 ========================= */
 
-/*
+
 const loadingMessages = [
 
     "Initializing 3nbr 17 Database...",
@@ -94,7 +94,7 @@ if (loadingText) {
 
 },1200);
 
-*/
+
 
 
 
